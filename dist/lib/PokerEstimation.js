@@ -69,6 +69,7 @@ class PokerEstimation {
                 socket.broadcast.to(room.id).emit('estimation-ended');
             }
         }, time * 1000);
+        socket.emit('estimation-started', time);
         socket.broadcast.to(room.id).emit('estimation-started', time);
     }
     estimate(socket, data) {
