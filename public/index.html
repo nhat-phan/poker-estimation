@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Poker Estimation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+
+<body>
+  <div class="container" style="padding-top: 30px">
+    <div id="welcome" style="display: none">
+      <div class="row">
+        <div class="col text-center">
+          <h1>Welcome Poker Estimation!</h1>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col text-center">
+          <button id="new-room-btn" class="btn btn-primary" style="margin: 0 20px">Start new room</button>
+          <button id="join-room-btn" class="btn btn-info" style="margin: 0 20px">Join to room</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="join-room" style="display: none">
+      <div class="row">
+        <div class="col text-center">
+          <h1>Join a room</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form>
+            <div class="form-row">
+              <div class="col">
+                <label for="validationServer01">Name</label>
+                <input id="player-name" type="text" class="form-control" placeholder="Please enter your name" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <label for="validationServer01">Room ID</label>
+                <input id="player-room-id" type="text" class="form-control" placeholder="Please enter room ID" required />
+              </div>
+            </div>
+            <br />
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit">Join</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="host" style="display: none">
+      <div class="row">
+        <div class="col text-center">
+          <h2><code>Room ID: <span id="room-id"></span></code></h2>
+          <br />
+          <div class="btn-group mr-2" role="group">
+            <button type="button" class="btn btn-primary start">Start in</button>
+            <button type="button" class="btn btn-primary change-time" value="3">3</button>
+            <button type="button" class="btn btn-warning change-time" value="5">5</button>
+            <button type="button" class="btn btn-primary change-time" value="7">7</button>
+            <button type="button" class="btn btn-primary change-time" value="10">10</button>
+            <button type="button" class="btn btn-danger exit">Exit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result" style="margin: 30px 0; display: none">
+      <div class="row">
+        <div class="col text-center">
+          <h2>All estimations</h2>
+
+          <ul class="result-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="player" style="display: none">
+      <div class="row">
+        <div class="col text-center">
+          <h2>Hello, Nhat!</h2>
+
+          <ul class="player-list">
+            <li class="number inactive" value="1">
+              <span class="number">1</span>
+            </li>
+            <li class="number inactive" value="2">
+              <span class="number">2</span>
+            </li>
+            <li class="number inactive" value="3">
+              <span class="number">3</span>
+            </li>
+            <li class="number inactive" value="5">
+              <span class="number">5</span>
+            </li>
+            <li class="number inactive" value="8">
+              <span class="number">8</span>
+            </li>
+            <li class="number inactive" value="13">
+              <span class="number">13</span>
+            </li>
+            <li class="number inactive" value="21">
+              <span class="number">21</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>
+    // var SERVER_URL = 'ws://localhost:3000/'
+  </script>
+  <script src="/js/app.js"></script>
+</body>
+
+</html>
