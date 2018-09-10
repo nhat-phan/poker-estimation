@@ -161,7 +161,7 @@ $(document).ready(function() {
 
     window.onbeforeunload = function() {
       if (PLAYING) {
-        // return 'Please confirm that you want to leave a room?'
+        return 'Please confirm that you want to leave a room?'
       }
     }
 

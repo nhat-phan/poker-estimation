@@ -1,6 +1,6 @@
 {
   "name": "poker-estimation",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "start-dev": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve\"",
     "start": "node ./dist",
